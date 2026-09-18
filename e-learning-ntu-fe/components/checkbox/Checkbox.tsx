@@ -1,0 +1,3 @@
+'use client';
+import type { CheckboxProps } from './types';
+export function Checkbox({ label, description, error, id, className = '', ...props }: CheckboxProps) { const inputId = id ?? `checkbox-${label.replace(/\s/g, '-').toLowerCase()}`; return <div><label htmlFor={inputId} className="flex cursor-pointer items-start gap-3"><input id={inputId} type="checkbox" className={`mt-0.5 h-4 w-4 rounded border-slate-300 accent-indigo-600 focus:ring-indigo-500 dark:border-slate-700 ${className}`} {...props} /><span><span className="block text-sm font-semibold">{label}</span>{description && <span className="mt-1 block text-sm text-slate-500">{description}</span>}</span></label>{error && <p className="mt-1 text-xs text-rose-600">{error}</p>}</div>; }

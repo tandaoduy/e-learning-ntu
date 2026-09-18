@@ -1,0 +1,3 @@
+import Link from 'next/link';
+import type { BreadcrumbItem } from './types';
+export function Breadcrumb({ items }: { items: BreadcrumbItem[] }) { return <nav aria-label="Breadcrumb"><ol className="flex flex-wrap items-center gap-2 text-sm text-slate-500 dark:text-slate-400">{items.map((item, index) => <li key={`${item.label}-${index}`} className="flex items-center gap-2">{index > 0 && <span aria-hidden className="text-slate-300 dark:text-slate-600">/</span>}{item.href && index !== items.length - 1 ? <Link href={item.href} className="hover:text-indigo-600 dark:hover:text-indigo-300">{item.label}</Link> : <span className="font-medium text-slate-800 dark:text-slate-100" aria-current={index === items.length - 1 ? 'page' : undefined}>{item.label}</span>}</li>)}</ol></nav>; }

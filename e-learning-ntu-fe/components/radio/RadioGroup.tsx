@@ -1,0 +1,3 @@
+'use client';
+import type { RadioProps } from './types';
+export function RadioGroup({ name, options, value, onChange, label }: RadioProps) { return <fieldset><legend className="mb-2 text-sm font-semibold">{label}</legend><div className="flex flex-wrap gap-4">{options.map((option) => <label key={option.value} className="flex cursor-pointer items-center gap-2 text-sm"><input type="radio" name={name} value={option.value} checked={value === option.value} disabled={option.disabled} onChange={() => onChange?.(option.value)} className="h-4 w-4 accent-indigo-600" />{option.label}</label>)}</div></fieldset>; }

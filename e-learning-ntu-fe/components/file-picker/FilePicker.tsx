@@ -1,0 +1,3 @@
+'use client';
+import type { FilePickerProps } from './types';
+export function FilePicker({ accept, multiple, onFiles, label = 'Chọn tệp' }: FilePickerProps) { return <label className="flex cursor-pointer items-center justify-center rounded-xl border-2 border-dashed border-slate-300 bg-slate-50 px-5 py-8 text-center text-sm text-slate-500 hover:border-indigo-400 hover:bg-indigo-50 dark:border-slate-700 dark:bg-slate-900 dark:hover:bg-indigo-950/30"><input className="sr-only" type="file" accept={accept} multiple={multiple} onChange={(e) => onFiles?.(Array.from(e.target.files ?? []))} /><span><b className="block text-slate-700 dark:text-slate-200">{label}</b><span className="mt-1 block">Kéo thả hoặc bấm để chọn</span></span></label>; }

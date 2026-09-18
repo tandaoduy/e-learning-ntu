@@ -1,0 +1,2 @@
+import Link from 'next/link'; import type { NavGroupProps } from './types';
+export function NavGroup({ label, items }: NavGroupProps) { return <nav aria-label={label}><p className="mb-2 px-3 text-xs font-bold uppercase tracking-wider text-slate-400">{label}</p><ul className="grid gap-1">{items.map((item) => <li key={item.href}><Link href={item.href} className={`block rounded-lg px-3 py-2 text-sm font-medium ${item.active ? 'bg-indigo-600 text-white' : 'text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800'}`}>{item.label}</Link></li>)}</ul></nav>; }

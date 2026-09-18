@@ -1,0 +1,2 @@
+import type { FormGroupProps } from './types';
+export function FormGroup({ label, hint, error, required, children }: FormGroupProps) { return <div className="grid gap-2"><label className="text-sm font-semibold">{label}{required && <span className="ml-1 text-rose-600">*</span>}</label>{children}{error ? <p className="text-xs text-rose-600">{error}</p> : hint && <p className="text-xs text-slate-500">{hint}</p>}</div>; }

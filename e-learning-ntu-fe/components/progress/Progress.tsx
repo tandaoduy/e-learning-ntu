@@ -1,0 +1,2 @@
+import type { ProgressProps } from './types';
+export function Progress({ value, label, showValue = true }: ProgressProps) { const safeValue = Math.max(0, Math.min(100, value)); return <div className="grid gap-2">{(label || showValue) && <div className="flex justify-between text-sm"><span>{label}</span>{showValue && <span className="font-semibold">{safeValue}%</span>}</div>}<div className="h-2 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700"><div className="h-full rounded-full bg-indigo-600 transition-all" style={{ width: `${safeValue}%` }} /></div></div>; }

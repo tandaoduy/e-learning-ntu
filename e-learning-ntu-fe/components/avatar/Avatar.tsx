@@ -1,0 +1,3 @@
+import type { AvatarProps } from './types';
+const size = { sm: 'h-8 w-8 text-xs', md: 'h-10 w-10 text-sm', lg: 'h-14 w-14 text-lg' };
+export function Avatar({ name, src, size: avatarSize = 'md' }: AvatarProps) { const initials = name.trim().split(/\s+/).slice(-2).map((x) => x[0]).join('').toUpperCase(); return <span title={name} className={`inline-grid shrink-0 place-items-center overflow-hidden rounded-full bg-indigo-100 font-bold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-200 ${size[avatarSize]}`}>{src ? <img src={src} alt={name} className="h-full w-full object-cover" /> : initials}</span>; }

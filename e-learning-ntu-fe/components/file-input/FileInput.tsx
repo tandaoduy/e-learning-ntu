@@ -1,0 +1,3 @@
+'use client';
+import type { FileInputProps } from './types';
+export function FileInput({ label = 'Chọn tệp', accept, multiple, disabled, onFiles }: FileInputProps) { return <label className="grid gap-2 text-sm font-semibold"><span>{label}</span><input type="file" accept={accept} multiple={multiple} disabled={disabled} onChange={(event) => onFiles?.(Array.from(event.target.files ?? []))} className="block w-full cursor-pointer rounded-lg border border-slate-300 bg-white text-sm text-slate-500 file:mr-4 file:border-0 file:bg-indigo-600 file:px-4 file:py-2 file:font-semibold file:text-white hover:file:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-700 dark:bg-slate-950" /></label>; }
